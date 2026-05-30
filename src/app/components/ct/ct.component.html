@@ -1,0 +1,33 @@
+<textarea placeholder="Write your answer here..."></textarea>
+
+@if (!showModel()) {
+  <button class="btn-show-model" (click)="toggleModel()">See Model Answer</button>
+}
+
+@if (showModel()) {
+  <div class="model-answer">{{ question().model_answer }}</div>
+
+  <div class="self-grade-row">
+    <button
+      class="grade-btn"
+      [class]="gradeClass('good')"
+      [disabled]="isGradeDisabled()"
+      (click)="grade('good')">
+      😊 Good
+    </button>
+    <button
+      class="grade-btn"
+      [class]="gradeClass('ok')"
+      [disabled]="isGradeDisabled()"
+      (click)="grade('ok')">
+      😐 OK
+    </button>
+    <button
+      class="grade-btn"
+      [class]="gradeClass('need-more')"
+      [disabled]="isGradeDisabled()"
+      (click)="grade('need-more')">
+      😟 Need more
+    </button>
+  </div>
+}

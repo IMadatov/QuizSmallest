@@ -1,0 +1,20 @@
+<button
+  class="option-btn"
+  [class.correct]="isCorrect(true)"
+  [class.wrong]="isWrong(true)"
+  [disabled]="isDisabled()"
+  (click)="select(true)">
+  True
+</button>
+<button
+  class="option-btn"
+  [class.correct]="isCorrect(false)"
+  [class.wrong]="isWrong(false)"
+  [disabled]="isDisabled()"
+  (click)="select(false)">
+  False
+</button>
+
+@if (selected() !== null) {
+  <div class="explanation">{{ question().explanation }}</div>
+}

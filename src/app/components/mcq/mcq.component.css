@@ -1,0 +1,37 @@
+.option-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.check-indicator {
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.option-btn.pending {
+  background: #eef5f1;
+  border-color: #2d6a4f;
+  color: #1a4a35;
+}
+
+.option-btn.missed {
+  background: #fff8e6;
+  border-color: #b8860b;
+  color: #6b4f00;
+}
+
+.btn-confirm {
+  width: 100%;
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 52px;
+  margin-top: 6px;
+}

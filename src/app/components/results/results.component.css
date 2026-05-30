@@ -1,0 +1,66 @@
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.score-card {
+  text-align: center;
+}
+
+.score-main {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2d6a4f;
+}
+
+.score-pct {
+  font-size: 20px;
+  color: #666;
+  margin: 4px 0 12px;
+}
+
+.score-message {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.breakdown-table th,
+.breakdown-table td {
+  padding: 10px 0;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.breakdown-table th {
+  font-size: 13px;
+  color: #888;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  width: 100%;
+  background: white;
+  color: #2d6a4f;
+  border: 1.5px solid #2d6a4f;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 52px;
+  margin-top: 10px;
+}

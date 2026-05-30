@@ -1,0 +1,13 @@
+.btn-show-model {
+  width: 100%;
+  background: white;
+  color: #2d6a4f;
+  border: 1.5px solid #2d6a4f;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 52px;
+  margin-top: 12px;
+}

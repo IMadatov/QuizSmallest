@@ -1,0 +1,17 @@
+@for (option of shuffledOptions(); track option.key) {
+  <button
+    class="option-btn"
+    [class.pending]="isPending(option.key)"
+    [class.correct]="isCorrect(option.key)"
+    [class.wrong]="isWrong(option.key)"
+    [class.missed]="isMissed(option.key)"
+    [disabled]="isDisabled()"
+    (click)="toggleOption(option.key)">
+    <span class="check-indicator">{{ isSelected(option.key) ? '☑' : '☐' }}</span>
+    {{ option.text }}
+  </button>
+}
+
+@if (hasSelection() && !confirmed()) {
+  <button class="btn-confirm" (click)="confirmAnswer()">Confirm Answer</button>
+}

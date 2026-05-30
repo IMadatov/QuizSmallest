@@ -1,0 +1,49 @@
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.filter-group {
+  margin-bottom: 24px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.count {
+  text-align: center;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.btn-primary + .btn-primary,
+.btn-primary.btn-secondary {
+  margin-top: 10px;
+}
+
+.btn-primary.btn-secondary {
+  background: white;
+  color: #2d6a4f;
+  border: 1.5px solid #2d6a4f;
+}

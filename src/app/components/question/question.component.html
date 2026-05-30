@@ -1,0 +1,30 @@
+<div class="screen">
+  <div class="progress-bar">
+    <div class="progress-fill" [style.width.%]="progressPercent()"></div>
+  </div>
+
+  <div class="top-bar">
+    <span class="progress-text">{{ quiz.progress().current }} / {{ quiz.progress().total }}</span>
+    <span class="score-text">Score: {{ quiz.score().correct }} / {{ quiz.score().answered }}</span>
+  </div>
+
+  <div class="card">
+    <div class="badges">
+      <span class="book-badge" [class]="bookClass()">{{ quiz.currentQuestion().book }}</span>
+      <span class="type-label">{{ typeLabel() }}</span>
+    </div>
+    <p class="question-text">{{ quiz.currentQuestion().question }}</p>
+
+    @switch (quiz.currentQuestion().type) {
+      @case ('mcq') { <app-mcq (answerSubmitted)="onAnswered()" /> }
+      @case ('tf')  { <app-tf  (answerSubmitted)="onAnswered()" /> }
+      @case ('ct')  { <app-ct  (answerSubmitted)="onAnswered()" /> }
+    }
+  </div>
+
+  @if (showNext()) {
+    <button class="btn-primary" (click)="quiz.nextQuestion()">
+      {{ isLast() ? 'See Results' : 'Next →' }}
+    </button>
+  }
+</div>

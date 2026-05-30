@@ -1,0 +1,27 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.type-label {
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+}
+
+.question-text {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}

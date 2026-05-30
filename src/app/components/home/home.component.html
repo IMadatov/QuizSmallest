@@ -1,0 +1,46 @@
+<div class="screen">
+  <h1>Dickens Quiz</h1>
+  <p class="subtitle">Little Dorrit & David Copperfield</p>
+
+  <section class="filter-group">
+    <label>Question type</label>
+    <div class="pills">
+      @for (option of typeOptions; track option.value) {
+        <button
+          class="pill"
+          [class.active]="quiz.filter().type === option.value"
+          (click)="quiz.setFilter({ type: option.value })">
+          {{ option.label }}
+        </button>
+      }
+    </div>
+  </section>
+
+  <section class="filter-group">
+    <label>Book</label>
+    <div class="pills">
+      @for (option of bookOptions; track option.value) {
+        <button
+          class="pill"
+          [class.active]="quiz.filter().book === option.value"
+          (click)="quiz.setFilter({ book: option.value })">
+          {{ option.label }}
+        </button>
+      }
+    </div>
+  </section>
+
+  <p class="count">{{ quiz.filteredCount() }} questions selected</p>
+
+  @if (quiz.hasSavedProgress()) {
+    <button class="btn-primary" (click)="quiz.restoreAndContinue()">Continue Quiz</button>
+  }
+
+  <button
+    class="btn-primary"
+    [class.btn-secondary]="quiz.hasSavedProgress()"
+    [disabled]="quiz.filteredCount() === 0"
+    (click)="quiz.startQuiz()">
+    Start New Quiz
+  </button>
+</div>

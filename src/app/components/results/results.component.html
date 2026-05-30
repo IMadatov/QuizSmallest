@@ -1,0 +1,34 @@
+<div class="screen">
+  <h1>Quiz Complete</h1>
+
+  <div class="card score-card">
+    <p class="score-main">{{ quiz.score().correct }} / {{ total() }}</p>
+    <p class="score-pct">{{ percentage() }}%</p>
+    <p class="score-message">{{ message() }}</p>
+  </div>
+
+  <div class="card">
+    <h2>Breakdown by type</h2>
+    <table class="breakdown-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of breakdown(); track row.type) {
+          @if (row.total > 0) {
+            <tr>
+              <td>{{ typeLabel(row.type) }}</td>
+              <td>{{ row.correct }} / {{ row.total }}</td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <button class="btn-primary" (click)="quiz.retryQuiz()">Try Again</button>
+  <button class="btn-secondary" (click)="quiz.goHome()">Go Home</button>
+</div>
