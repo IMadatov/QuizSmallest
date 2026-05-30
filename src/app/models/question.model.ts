@@ -8,7 +8,7 @@ export interface McqQuestion {
   book: BookType;
   question: string;
   options: { A: string; B: string; C: string; D: string };
-  answers: OptionKey[];
+  answer: OptionKey[];
   explanation: string;
 }
 

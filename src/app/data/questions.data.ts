@@ -3,565 +3,663 @@ import { Question } from '../models/question.model';
 // Replace with full 100-question set when ready.
 export const QUESTIONS: Question[] = [
   {
-  "id": 1,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "What is the name of David Copperfield's devoted nurse?",
-  "options": {
-  "A": "Miss Betsey Trotwood",
-  "B": "Clara Peggotty",
-  "C": "Jane Murdstone",
-  "D": "Mrs. Gummidge"
-  },
-  "answers": ["B"],
-  "explanation": "Clara Peggotty is David's kind and faithful nurse who cares for him deeply throughout his childhood and beyond."
-  },
-  {
-  "id": 2,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Where was Amy Dorrit born and brought up?",
-  "options": {
-  "A": "In Mrs Clennam's house",
-  "B": "In the Marshalsea Prison",
-  "C": "In Yarmouth",
-  "D": "In Bleeding-Heart Yard"
-  },
-  "answers": ["B"],
-  "explanation": "Amy Dorrit was born in the Marshalsea Prison, where her father William Dorrit had been imprisoned for debt."
-  },
-  {
-  "id": 3,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Who is David's cruel stepfather?",
-  "options": {
-  "A": "Mr. Micawber",
-  "B": "Mr. Spenlow",
-  "C": "Edward Murdstone",
-  "D": "Uriah Heep"
-  },
-  "answers": ["C"],
-  "explanation": "Edward Murdstone is David's strict and abusive stepfather who sends him away to school and later to work in a factory."
-  },
-  {
-  "id": 4,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "How long has William Dorrit been in the Marshalsea Prison when Arthur first visits?",
-  "options": {
-  "A": "10 years",
-  "B": "15 years",
-  "C": "23 years",
-  "D": "30 years"
-  },
-  "answers": ["C"],
-  "explanation": "Mr William Dorrit had passed through the Marshalsea's gates twenty-three years before."
-  },
-  {
-  "id": 5,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "At which school does David Copperfield study under the tyrannical Mr. Creakle?",
-  "options": {
-  "A": "Lowood School",
-  "B": "Salem House",
-  "C": "Rugby School",
-  "D": "Dotheboys Hall"
-  },
-  "answers": ["B"],
-  "explanation": "David is sent to Salem House, an oppressive boarding school run by the cruel Mr. Creakle."
-  },
-  {
-  "id": 6,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "What is the name of the government department known for delaying and obstructing everything?",
-  "options": {
-  "A": "The Circumlocution Office",
-  "B": "The Ministry of Peace",
-  "C": "The Department of Records",
-  "D": "The Chancellery"
-  },
-  "answers": ["A"],
-  "explanation": "The Circumlocution Office was the most important department in the government, knowing best how not to do anything."
-  },
-  {
-  "id": 7,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Who is David's first wife?",
-  "options": {
-  "A": "Agnes Wickfield",
-  "B": "Little Em'ly",
-  "C": "Clara Peggotty",
-  "D": "Dora Spenlow"
-  },
-  "answers": ["D"],
-  "explanation": "David falls madly in love with and marries the childlike Dora Spenlow, though she later dies young."
-  },
-  {
-  "id": 8,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Who discovers the fortune that frees Mr. Dorrit from prison?",
-  "options": {
-  "A": "Arthur Clennam",
-  "B": "Mr. Pancks",
-  "C": "Daniel Doyce",
-  "D": "Mr. Meagles"
-  },
-  "answers": ["B"],
-  "explanation": "Mr. Pancks, the rent collector, investigates the Dorrit family history and discovers that Mr. Dorrit is heir to a great fortune."
-  },
-  {
-  "id": 9,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "What is Uriah Heep's most frequently stated, yet false, personal trait?",
-  "options": {
-  "A": "Ambition",
-  "B": "Generosity",
-  "C": "Humility",
-  "D": "Bravery"
-  },
-  "answers": ["C"],
-  "explanation": "Uriah Heep constantly and falsely claims to be 'very 'umble' to manipulate those around him."
-  },
-  {
-  "id": 10,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Which character loves Little Dorrit and is the son of a jailer?",
-  "options": {
-  "A": "Tip Dorrit",
-  "B": "Edmund Sparkler",
-  "C": "Young John Chivery",
-  "D": "Barnacle Junior"
-  },
-  "answers": ["C"],
-  "explanation": "Young John Chivery, the son of a jailer, has loved Little Dorrit since he was a boy and hopes to marry her."
-  },
-  {
-  "id": 11,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Who runs away with Little Em'ly, bringing shame to her family?",
-  "options": {
-  "A": "Uriah Heep",
-  "B": "James Steerforth",
-  "C": "Ham Peggotty",
-  "D": "Tommy Traddles"
-  },
-  "answers": ["B"],
-  "explanation": "James Steerforth, David's charismatic but selfish friend, seduces and elopes with Little Em'ly."
-  },
-  {
-  "id": 12,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Who does Fanny Dorrit marry?",
-  "options": {
-  "A": "Arthur Clennam",
-  "B": "Mr. Merdle",
-  "C": "Edmund Sparkler",
-  "D": "Daniel Doyce"
-  },
-  "answers": ["C"],
-  "explanation": "Fanny Dorrit marries Edmund Sparkler to gain a better position in fashionable society."
-  },
-  {
-  "id": 13,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "What happens to Mr. Micawber due to his chronic optimism and inability to pay his debts?",
-  "options": {
-  "A": "He becomes incredibly rich",
-  "B": "He is sent to a debtors' prison",
-  "C": "He runs away to France",
-  "D": "He is executed"
-  },
-  "answers": ["B"],
-  "explanation": "Mr. Micawber is sent to the King's Bench Prison for debt, mirroring the experiences of Dickens's own father."
-  },
-  {
-  "id": 14,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "What letters are engraved on the watch Arthur brings to his mother?",
-  "options": {
-  "A": "A.F.C.",
-  "B": "D.N.F.",
-  "C": "R.I.G.",
-  "D": "M.R.D."
-  },
-  "answers": ["B"],
-  "explanation": "The watch bears the letters D.N.F., which Mrs Clennam states stand for 'Do Not Forget'."
-  },
-  {
-  "id": 15,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Who is David's eccentric but fiercely protective great-aunt?",
-  "options": {
-  "A": "Miss Betsey Trotwood",
-  "B": "Mrs. Gummidge",
-  "C": "Mrs. Steerforth",
-  "D": "Miss Murdstone"
-  },
-  "answers": ["A"],
-  "explanation": "Miss Betsey Trotwood takes David in after he runs away from his miserable factory job and becomes his loving guardian."
-  },
-  {
-  "id": 16,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "What is the profession of Daniel Doyce?",
-  "options": {
-  "A": "Banker",
-  "B": "Rent collector",
-  "C": "Engineer and inventor",
-  "D": "Musician"
-  },
-  "answers": ["C"],
-  "explanation": "Daniel Doyce is an engineer and inventor who was ignored by the Circumlocution Office."
-  },
-  {
-  "id": 17,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "What profession does David Copperfield ultimately pursue successfully?",
-  "options": {
-  "A": "Lawyer",
-  "B": "Doctor",
-  "C": "Author",
-  "D": "Politician"
-  },
-  "answers": ["C"],
-  "explanation": "David Copperfield ultimately finds great success and personal fulfillment as a professional author."
-  },
-  {
-  "id": 18,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "How does the wealthy banker Mr. Merdle die?",
-  "options": {
-  "A": "He is murdered by Rigaud",
-  "B": "He dies of a heart attack",
-  "C": "He kills himself with a penknife",
-  "D": "He dies of old age"
-  },
-  "answers": ["C"],
-  "explanation": "Mr. Merdle commits suicide using a tortoiseshell penknife at the public baths after his massive financial fraud is discovered."
-  },
-  {
-  "id": 19,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Which family lives in an overturned boat on the beach in Yarmouth?",
-  "options": {
-  "A": "The Peggottys",
-  "B": "The Micawbers",
-  "C": "The Heeps",
-  "D": "The Spenlows"
-  },
-  "answers": ["A"],
-  "explanation": "The Peggotty family lives in a cozy, unique home made from an overturned ship on the beach in Yarmouth."
-  },
-  {
-  "id": 20,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Where do the Dorrit family travel immediately after leaving the Marshalsea?",
-  "options": {
-  "A": "America",
-  "B": "Russia",
-  "C": "Switzerland and Italy",
-  "D": "Germany"
-  },
-  "answers": ["C"],
-  "explanation": "After inheriting their fortune, the Dorrit family travels to the Swiss Alps and then on to Italy."
-  },
-  {
-  "id": 21,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Who eventually exposes Uriah Heep's frauds and crimes?",
-  "options": {
-  "A": "David Copperfield",
-  "B": "Tommy Traddles",
-  "C": "Mr. Micawber",
-  "D": "Agnes Wickfield"
-  },
-  "answers": ["C"],
-  "explanation": "Mr. Micawber, who was hired by Uriah Heep, secretly gathers evidence and dramatically exposes Heep's financial crimes."
-  },
-  {
-  "id": 22,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Which prison does Arthur Clennam end up in after losing his money?",
-  "options": {
-  "A": "Newgate",
-  "B": "The King's Bench",
-  "C": "The Marshalsea",
-  "D": "The Fleet"
-  },
-  "answers": ["C"],
-  "explanation": "Arthur Clennam is sent to the Marshalsea Prison after his investments in Merdle's bank fail, ruining his business."
-  },
-  {
-  "id": 23,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Who is David's second wife, whom he realizes he has loved all along?",
-  "options": {
-  "A": "Little Em'ly",
-  "B": "Dora Spenlow",
-  "C": "Agnes Wickfield",
-  "D": "Rosa Dartle"
-  },
-  "answers": ["C"],
-  "explanation": "After Dora's death, David realizes his deep, enduring love for his childhood friend Agnes Wickfield, and marries her."
-  },
-  {
-  "id": 24,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "What is Mrs Clennam's physical condition?",
-  "options": {
-  "A": "She is blind",
-  "B": "She has lost her hearing",
-  "C": "She cannot walk and uses a chair on wheels",
-  "D": "She is entirely bedridden and unconscious"
-  },
-  "answers": ["C"],
-  "explanation": "Mrs Clennam is paralyzed, hasn't left her room in fifteen years, and sits in a chair on wheels."
-  },
-  {
-  "id": 25,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "What is the name of David's good-hearted but struggling school friend who later becomes a successful lawyer?",
-  "options": {
-  "A": "James Steerforth",
-  "B": "Tommy Traddles",
-  "C": "Ham Peggotty",
-  "D": "Uriah Heep"
-  },
-  "answers": ["B"],
-  "explanation": "Tommy Traddles is David's loyal friend from Salem House who works hard and eventually becomes a successful lawyer."
-  },
-  {
-  "id": 26,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Who is the villainous French traveler who blackmails Mrs Clennam?",
-  "options": {
-  "A": "Mr. Pancks",
-  "B": "Edmund Sparkler",
-  "C": "Mr. Rigaud",
-  "D": "Jeremiah Flintwinch"
-  },
-  "answers": ["C"],
-  "explanation": "Mr. Rigaud is the sinister traveler with a long nose and strange eyes who attempts to extort money from Mrs Clennam."
-  },
-  {
-  "id": 27,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Why does David Copperfield go to work at Murdstone and Grinby's warehouse?",
-  "options": {
-  "A": "To learn a trade",
-  "B": "Because his stepfather forces him to",
-  "C": "To earn money to save his mother",
-  "D": "To pay for his school tuition"
-  },
-  "answers": ["B"],
-  "explanation": "After his mother's death, Mr. Murdstone pulls David out of school and forces him to work in a miserable bottle-washing factory."
-  },
-  {
-  "id": 28,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "What happens to Mr. Dorrit's mind shortly before he dies at Mrs Merdle's dinner party?",
-  "options": {
-  "A": "He forgets his daughters' names",
-  "B": "He believes he is a young man again",
-  "C": "He thinks he is back in the Marshalsea Prison",
-  "D": "He believes he is Mr. Merdle"
-  },
-  "answers": ["C"],
-  "explanation": "Mr. Dorrit's mind breaks, and he hallucinates that he is back in the Marshalsea, asking for the jailer Chivery and welcoming the dinner guests to the prison."
-  },
-  {
-  "id": 29,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "What is Miss Betsey Trotwood's obsession regarding her front lawn?",
-  "options": {
-  "A": "Keeping it perfectly manicured",
-  "B": "Growing rare roses",
-  "C": "Chasing away donkeys",
-  "D": "Building a high wall around it"
-  },
-  "answers": ["C"],
-  "explanation": "Miss Betsey Trotwood has an absolute intolerance for donkeys being ridden across her patch of green and constantly chases them away."
-  },
-  {
-  "id": 30,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "What is the name of Arthur Clennam's mother's business partner and servant?",
-  "options": {
-  "A": "Mr. Plornish",
-  "B": "Jeremiah Flintwinch",
-  "C": "Daniel Doyce",
-  "D": "Mr. Casby"
-  },
-  "answers": ["B"],
-  "explanation": "Jeremiah Flintwinch is Mrs Clennam's short, sideways-bending servant who is elevated to be her business partner."
-  },
-  {
-  "id": 31,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Who does Ham Peggotty die trying to rescue in a storm?",
-  "options": {
-  "A": "David Copperfield",
-  "B": "Little Em'ly",
-  "C": "James Steerforth",
-  "D": "Mr. Micawber"
-  },
-  "answers": ["C"],
-  "explanation": "Ham heroically but tragically drowns while trying to rescue a sailor from a shipwreck, who turns out to be James Steerforth."
-  },
-  {
-  "id": 32,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Who is Frederick Dorrit?",
-  "options": {
-  "A": "William Dorrit's son",
-  "B": "William Dorrit's father",
-  "C": "William Dorrit's brother",
-  "D": "A wealthy creditor"
-  },
-  "answers": ["C"],
-  "explanation": "Frederick Dorrit is William Dorrit's weak, old brother who works as a musician at a theatre to help the family."
-  },
-  {
-  "id": 33,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "What phrase is Mr. Micawber famous for constantly repeating?",
-  "options": {
-  "A": "I am very 'umble.",
-  "B": "Something will turn up.",
-  "C": "Barkis is willin'.",
-  "D": "Bah, humbug!"
-  },
-  "answers": ["B"],
-  "explanation": "Despite his constant financial ruin, Mr. Micawber remains endlessly optimistic that 'something will turn up'."
-  },
-  {
-  "id": 34,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Who pays the debts of Tip Dorrit so he can leave the Marshalsea?",
-  "options": {
-  "A": "Mr. Merdle",
-  "B": "Arthur Clennam",
-  "C": "Mr. Casby",
-  "D": "Mrs Clennam"
-  },
-  "answers": ["B"],
-  "explanation": "Arthur Clennam secretly pays Tip's debts through Mr. Plornish so that Tip can be released from the prison."
-  },
-  {
-  "id": 35,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "What is the name of Dora Spenlow's small, annoying dog?",
-  "options": {
-  "A": "Jip",
-  "B": "Diogenes",
-  "C": "Bullseye",
-  "D": "Grip"
-  },
-  "answers": ["A"],
-  "explanation": "Dora's beloved and overly pampered little dog is named Jip, who dies of old age at the exact moment she dies."
-  },
-  {
-  "id": 36,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "Which family takes Arthur Clennam into their home after his quarantine in Marseille?",
-  "options": {
-  "A": "The Barnacles",
-  "B": "The Meagles",
-  "C": "The Merdles",
-  "D": "The Plornishes"
-  },
-  "answers": ["B"],
-  "explanation": "Mr. Meagles and his family, who were in quarantine with Arthur in Marseille, invite him to their home in Twickenham."
-  },
-  {
-  "id": 37,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Which character is known for the strange scar on her lip that darkens when she is angry?",
-  "options": {
-  "A": "Jane Murdstone",
-  "B": "Rosa Dartle",
-  "C": "Miss Mowcher",
-  "D": "Julia Mills"
-  },
-  "answers": ["B"],
-  "explanation": "Rosa Dartle bears a prominent scar on her lip, caused by Steerforth throwing a hammer at her when they were children."
-  },
-  {
-  "id": 38,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "How does Fanny Dorrit feel about her sister Amy's old, shabby dress when they leave the Marshalsea?",
-  "options": {
-  "A": "She is nostalgic about it",
-  "B": "She is deeply ashamed and angry",
-  "C": "She doesn't notice it",
-  "D": "She wants to wear it herself"
-  },
-  "answers": ["B"],
-  "explanation": "Fanny is extremely annoyed and ashamed because Amy fainted before changing her old dress, making the family look foolish."
-  },
-  {
-  "id": 39,
-  "type": "mcq",
-  "book": "David Copperfield",
-  "question": "Who says the phrase 'Barkis is willin'' to propose marriage to Clara Peggotty?",
-  "options": {
-  "A": "Mr. Spenlow",
-  "B": "Mr. Peggotty",
-  "C": "Mr. Barkis",
-  "D": "Mr. Dick"
-  },
-  "answers": ["C"],
-  "explanation": "Mr. Barkis, the carrier, sends this famous, brief message through David to propose to Peggotty."
-  },
-  {
-  "id": 40,
-  "type": "mcq",
-  "book": "Little Dorrit",
-  "question": "What causes Arthur Clennam to suspect his family has a dark secret?",
-  "options": {
-  "A": "He finds a hidden will",
-  "B": "His father's anxious behavior before dying and giving him a watch",
-  "C": "He overhears Affery talking to ghosts",
-  "D": "Mr. Merdle confesses it to him"
-  },
-  "answers": ["B"],
-  "explanation": "Arthur suspects a secret because of his father's guilty, anxious face before dying, and his desperate attempt to write a message regarding a watch."
-  },
+    "id": 1,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "What is the name of David Copperfield's devoted nurse?",
+    "options": {
+    "A": "Miss Betsey Trotwood",
+    "B": "Clara Peggotty",
+    "C": "Jane Murdstone",
+    "D": "Mrs. Gummidge"
+    },
+    "answer": [
+    "B"
+    ],
+    "explanation": "Clara Peggotty is David's kind and faithful nurse who cares for him deeply throughout his childhood and beyond."
+    },
+    {
+    "id": 2,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Where was Amy Dorrit born and brought up?",
+    "options": {
+    "A": "In Mrs Clennam's house",
+    "B": "In the Marshalsea Prison",
+    "C": "In Yarmouth",
+    "D": "In Bleeding-Heart Yard"
+    },
+    "answer": [
+    "B"
+    ],
+    "explanation": "Amy Dorrit was born in the Marshalsea Prison, where her father William Dorrit had been imprisoned for debt."
+    },
+    {
+    "id": 3,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Who is David's cruel stepfather?",
+    "options": {
+    "A": "Mr. Micawber",
+    "B": "Mr. Spenlow",
+    "C": "Edward Murdstone",
+    "D": "Uriah Heep"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Edward Murdstone is David's strict and abusive stepfather who sends him away to school and later to work in a factory."
+    },
+    {
+    "id": 4,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "How long has William Dorrit been in the Marshalsea Prison when Arthur first visits?",
+    "options": {
+    "A": "10 years",
+    "B": "15 years",
+    "C": "23 years",
+    "D": "30 years"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Mr William Dorrit had passed through the Marshalsea's gates twenty-three years before."
+    },
+    {
+    "id": 5,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "At which school does David Copperfield study under the tyrannical Mr. Creakle?",
+    "options": {
+    "A": "Lowood School",
+    "B": "Salem House",
+    "C": "Rugby School",
+    "D": "Dotheboys Hall"
+    },
+    "answer": [
+    "B"
+    ],
+    "explanation": "David is sent to Salem House, an oppressive boarding school run by the cruel Mr. Creakle."
+    },
+    {
+    "id": 6,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "What is the name of the government department known for delaying and obstructing everything?",
+    "options": {
+    "A": "The Circumlocution Office",
+    "B": "The Ministry of Peace",
+    "C": "The Department of Records",
+    "D": "The Chancellery"
+    },
+    "answer": [
+    "A"
+    ],
+    "explanation": "The Circumlocution Office was the most important department in the government, knowing best how not to do anything."
+    },
+    {
+    "id": 7,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Who is David's first wife?",
+    "options": {
+    "A": "Agnes Wickfield",
+    "B": "Little Em'ly",
+    "C": "Clara Peggotty",
+    "D": "Dora Spenlow"
+    },
+    "answer": [
+    "D"
+    ],
+    "explanation": "David falls madly in love with and marries the childlike Dora Spenlow, though she later dies young."
+    },
+    {
+    "id": 8,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Who discovers the fortune that frees Mr. Dorrit from prison?",
+    "options": {
+    "A": "Arthur Clennam",
+    "B": "Mr. Pancks",
+    "C": "Daniel Doyce",
+    "D": "Mr. Meagles"
+    },
+    "answer": [
+    "B"
+    ],
+    "explanation": "Mr. Pancks, the rent collector, investigates the Dorrit family history and discovers that Mr. Dorrit is heir to a great fortune."
+    },
+    {
+    "id": 9,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "What is Uriah Heep's most frequently stated, yet false, personal trait?",
+    "options": {
+    "A": "Ambition",
+    "B": "Generosity",
+    "C": "Humility",
+    "D": "Bravery"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Uriah Heep constantly and falsely claims to be 'very umble' to manipulate those around him."
+    },
+    {
+    "id": 10,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which character loves Little Dorrit and is the son of a jailer?",
+    "options": {
+    "A": "Tip Dorrit",
+    "B": "Edmund Sparkler",
+    "C": "Young John Chivery",
+    "D": "Barnacle Junior"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Young John Chivery, the son of a jailer, has loved Little Dorrit since he was a boy and hopes to marry her."
+    },
+    {
+    "id": 11,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Who runs away with Little Em'ly, bringing shame to her family?",
+    "options": {
+    "A": "Uriah Heep",
+    "B": "James Steerforth",
+    "C": "Ham Peggotty",
+    "D": "Tommy Traddles"
+    },
+    "answer": [
+    "B"
+    ],
+    "explanation": "James Steerforth, David's charismatic but selfish friend, seduces and elopes with Little Em'ly."
+    },
+    {
+    "id": 12,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Who does Fanny Dorrit marry?",
+    "options": {
+    "A": "Arthur Clennam",
+    "B": "Mr. Merdle",
+    "C": "Edmund Sparkler",
+    "D": "Daniel Doyce"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Fanny Dorrit marries Edmund Sparkler to gain a better position in fashionable society."
+    },
+    {
+    "id": 13,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "What happens to Mr. Micawber due to his chronic optimism and inability to pay his debts?",
+    "options": {
+    "A": "He becomes incredibly rich",
+    "B": "He is sent to a debtors' prison",
+    "C": "He runs away to France",
+    "D": "He is executed"
+    },
+    "answer": [
+    "B"
+    ],
+    "explanation": "Mr. Micawber is sent to the King's Bench Prison for debt, mirroring the experiences of Dickens's own father."
+    },
+    {
+    "id": 14,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "What letters are engraved on the watch Arthur brings to his mother?",
+    "options": {
+    "A": "A.F.C.",
+    "B": "D.N.F.",
+    "C": "R.I.G.",
+    "D": "M.R.D."
+    },
+    "answer": [
+    "B"
+    ],
+    "explanation": "The watch bears the letters D.N.F., which Mrs Clennam states stand for 'Do Not Forget'."
+    },
+    {
+    "id": 15,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Who is David's eccentric but fiercely protective great-aunt?",
+    "options": {
+    "A": "Miss Betsey Trotwood",
+    "B": "Mrs. Gummidge",
+    "C": "Mrs. Steerforth",
+    "D": "Miss Murdstone"
+    },
+    "answer": [
+    "A"
+    ],
+    "explanation": "Miss Betsey Trotwood takes David in after he runs away from his miserable factory job and becomes his loving guardian."
+    },
+    {
+    "id": 16,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "What is the profession of Daniel Doyce?",
+    "options": {
+    "A": "Banker",
+    "B": "Rent collector",
+    "C": "Engineer and inventor",
+    "D": "Musician"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Daniel Doyce is an engineer and inventor who was ignored by the Circumlocution Office."
+    },
+    {
+    "id": 17,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "What profession does David Copperfield ultimately pursue successfully?",
+    "options": {
+    "A": "Lawyer",
+    "B": "Doctor",
+    "C": "Author",
+    "D": "Politician"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "David Copperfield ultimately finds great success and personal fulfillment as a professional author."
+    },
+    {
+    "id": 18,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "How does the wealthy banker Mr. Merdle die?",
+    "options": {
+    "A": "He is murdered by Rigaud",
+    "B": "He dies of a heart attack",
+    "C": "He kills himself with a penknife",
+    "D": "He dies of old age"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Mr. Merdle commits suicide using a tortoiseshell penknife at the public baths after his massive financial fraud is discovered."
+    },
+    {
+    "id": 19,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Which family lives in an overturned boat on the beach in Yarmouth?",
+    "options": {
+    "A": "The Peggottys",
+    "B": "The Micawbers",
+    "C": "The Heeps",
+    "D": "The Spenlows"
+    },
+    "answer": [
+    "A"
+    ],
+    "explanation": "The Peggotty family lives in a cozy, unique home made from an overturned ship on the beach in Yarmouth."
+    },
+    {
+    "id": 20,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Where do the Dorrit family travel immediately after leaving the Marshalsea?",
+    "options": {
+    "A": "America",
+    "B": "Russia",
+    "C": "Switzerland and Italy",
+    "D": "Germany"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "After inheriting their fortune, the Dorrit family travels to the Swiss Alps and then on to Italy."
+    },
+    {
+    "id": 21,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Who eventually exposes Uriah Heep's frauds and crimes?",
+    "options": {
+    "A": "David Copperfield",
+    "B": "Tommy Traddles",
+    "C": "Mr. Micawber",
+    "D": "Agnes Wickfield"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Mr. Micawber, who was hired by Uriah Heep, secretly gathers evidence and dramatically exposes Heep's financial crimes."
+    },
+    {
+    "id": 22,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which prison does Arthur Clennam end up in after losing his money?",
+    "options": {
+    "A": "Newgate",
+    "B": "The King's Bench",
+    "C": "The Marshalsea",
+    "D": "The Fleet"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Arthur Clennam is sent to the Marshalsea Prison after his investments in Merdle's bank fail, ruining his business."
+    },
+    {
+    "id": 23,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Who is David's second wife, whom he realizes he has loved all along?",
+    "options": {
+    "A": "Little Em'ly",
+    "B": "Dora Spenlow",
+    "C": "Agnes Wickfield",
+    "D": "Rosa Dartle"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "After Dora's death, David realizes his deep, enduring love for his childhood friend Agnes Wickfield, and marries her."
+    },
+    {
+    "id": 24,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "What is Mrs Clennam's physical condition?",
+    "options": {
+    "A": "She is blind",
+    "B": "She has lost her hearing",
+    "C": "She cannot walk and uses a chair on wheels",
+    "D": "She is entirely bedridden and unconscious"
+    },
+    "answer": [
+    "C"
+    ],
+    "explanation": "Mrs Clennam is paralyzed, hasn't left her room in fifteen years, and sits in a chair on wheels."
+    },
+    {
+    "id": 25,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "What is the name of David's good-hearted but struggling school friend who later becomes a successful lawyer?",
+    "options": {
+    "A": "James Steerforth",
+    "B": "Tommy Traddles",
+    "C": "Ham Peggotty",
+    "D": "Uriah Heep"
+    },
+    "answer": [
+    "B"
+    ],
+    "explanation": "Tommy Traddles is David's loyal friend from Salem House who works hard and eventually becomes a successful lawyer."
+    },
+    {
+    "id": 26,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which of the following are true about the villainous Mr. Rigaud / Blandois?",
+    "options": {
+    "A": "He blackmails Mrs Clennam.",
+    "B": "He dies when the Clennam house collapses.",
+    "C": "He marries Fanny Dorrit.",
+    "D": "He is a humble clerk."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "Rigaud blackmails Mrs Clennam and is killed when her dilapidated house collapses. He does not marry Fanny, nor is he a humble clerk (which is Heep)."
+    },
+    {
+    "id": 27,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Which of the following describe David Copperfield's time at Murdstone and Grinby's warehouse?",
+    "options": {
+    "A": "He washes and labels empty wine bottles.",
+    "B": "He meets Mr. Micawber there.",
+    "C": "He is treated like a gentleman by the other boys.",
+    "D": "He works there to pay for his school tuition."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "David washes bottles and meets Micawber at the warehouse. He is not treated as a gentleman there, and he works there because his stepfather forces him to, not to pay tuition."
+    },
+    {
+    "id": 28,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which of the following events happen during Mr. Dorrit's mental collapse at Mrs Merdle's dinner party?",
+    "options": {
+    "A": "He forgets his daughters' names.",
+    "B": "He hallucinates he is back in the Marshalsea.",
+    "C": "He welcomes the guests as if they are prison inmates.",
+    "D": "He tries to stab Mr. Merdle."
+    },
+    "answer": [
+    "B",
+    "C"
+    ],
+    "explanation": "Mr. Dorrit's mind breaks, causing him to hallucinate he is in the Marshalsea and welcome guests as inmates. He remembers his daughters and does not attack Mr. Merdle."
+    },
+    {
+    "id": 29,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Which of the following statements are true about Miss Betsey Trotwood?",
+    "options": {
+    "A": "She is obsessed with chasing donkeys off her lawn.",
+    "B": "She adopts David and calls him 'Trotwood'.",
+    "C": "She loses all her money permanently.",
+    "D": "She was David's mother's best friend."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "Miss Betsey chases donkeys from her lawn and adopts David, renaming him Trotwood. She only pretends to lose her money to test David, and she is his aunt, not his mother's friend."
+    },
+    {
+    "id": 30,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which of the following describe Jeremiah Flintwinch?",
+    "options": {
+    "A": "He is Mrs Clennam's servant and later business partner.",
+    "B": "He physically abuses his wife Affery.",
+    "C": "He secretly pays off Tip Dorrit's debts.",
+    "D": "He escapes from London with money before the house collapses."
+    },
+    "answer": [
+    "A",
+    "B",
+    "D"
+    ],
+    "explanation": "Jeremiah is Mrs Clennam's servant-turned-partner, abuses his wife Affery, and escapes with money before the house falls. Arthur, not Jeremiah, pays Tip's debts."
+    },
+    {
+    "id": 31,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Which of the following are true about Ham Peggotty?",
+    "options": {
+    "A": "He is engaged to Little Em'ly.",
+    "B": "He drowns trying to rescue James Steerforth.",
+    "C": "He emigrates to Australia with Mr. Micawber.",
+    "D": "He works as a clerk for Mr. Spenlow."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "Ham is engaged to Little Em'ly and tragically drowns trying to rescue Steerforth. He does not emigrate to Australia, nor does he work for Spenlow."
+    },
+    {
+    "id": 32,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which of the following describe William Dorrit's brother, Frederick?",
+    "options": {
+    "A": "He is a weak, old musician.",
+    "B": "He is a wealthy creditor.",
+    "C": "He remains humble and kind, unlike his brother.",
+    "D": "He is imprisoned for murder."
+    },
+    "answer": [
+    "A",
+    "C"
+    ],
+    "explanation": "Frederick is William's brother, a weak old musician who remains humble and kind. He is neither a wealthy creditor nor a murderer."
+    },
+    {
+    "id": 33,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Which of the following phrases and actions are associated with Mr. Micawber?",
+    "options": {
+    "A": "He frequently states that 'something will turn up'.",
+    "B": "He exposes Uriah Heep's frauds.",
+    "C": "He constantly repeats 'I am very umble'.",
+    "D": "He ends up as a successful magistrate in Australia."
+    },
+    "answer": [
+    "A",
+    "B",
+    "D"
+    ],
+    "explanation": "Micawber constantly hopes 'something will turn up', exposes Uriah Heep, and later becomes a magistrate in Australia. Heep, not Micawber, repeats 'I am very umble'."
+    },
+    {
+    "id": 34,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which of the following statements apply to Tip (Edward) Dorrit?",
+    "options": {
+    "A": "He becomes a debtor and is imprisoned in the Marshalsea.",
+    "B": "His debts are secretly paid by Arthur Clennam.",
+    "C": "He becomes an engineer and invents a new machine.",
+    "D": "He is Arthur Clennam's business partner."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "Tip ends up as a debtor in the Marshalsea, and his debts are secretly paid by Arthur. He never becomes an engineer (that is Doyce) or Arthur's partner."
+    },
+    {
+    "id": 35,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Which of the following describe Dora Spenlow?",
+    "options": {
+    "A": "She is highly skilled at housekeeping.",
+    "B": "She owns a small, pampered dog named Jip.",
+    "C": "She asks David to call her his 'child-wife'.",
+    "D": "She secretly helps Uriah Heep."
+    },
+    "answer": [
+    "B",
+    "C"
+    ],
+    "explanation": "Dora owns a pampered dog named Jip and asks David to call her his 'child-wife'. She is a terrible housekeeper and has no connection to Uriah Heep."
+    },
+    {
+    "id": 36,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which of the following are true about the Meagles family?",
+    "options": {
+    "A": "They invite Arthur Clennam to their home in Twickenham.",
+    "B": "They are quarantined with Arthur in Marseille.",
+    "C": "They run the Circumlocution Office.",
+    "D": "They live in Bleeding-Heart Yard."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "The Meagles family is quarantined with Arthur in Marseille and invites him to Twickenham. The Barnacles run the Circumlocution Office, and the Plornishes live in Bleeding-Heart Yard."
+    },
+    {
+    "id": 37,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Which of the following statements are true about Rosa Dartle?",
+    "options": {
+    "A": "She bears a prominent scar on her lip.",
+    "B": "Her scar was caused by Steerforth throwing a hammer at her.",
+    "C": "She is fiercely loyal to David Copperfield.",
+    "D": "She secretly marries Uriah Heep."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "Rosa Dartle has a prominent lip scar caused by Steerforth throwing a hammer at her. She is bitterly in love with Steerforth, not loyal to David, and does not marry Heep."
+    },
+    {
+    "id": 38,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which of the following describe Fanny Dorrit's character and actions?",
+    "options": {
+    "A": "She is deeply ashamed of her family's past poverty.",
+    "B": "She marries Edmund Sparkler for social status.",
+    "C": "She remains humble and self-sacrificing like her sister Amy.",
+    "D": "She becomes a famous author."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "Fanny is ashamed of her family's poverty and marries Edmund Sparkler for social standing. She is proud, not humble like Amy, and does not become an author."
+    },
+    {
+    "id": 39,
+    "type": "mcq",
+    "book": "David Copperfield",
+    "question": "Which of the following apply to Mr. Barkis?",
+    "options": {
+    "A": "He is a carrier who transports David.",
+    "B": "He proposes to Clara Peggotty using the message 'Barkis is willin'.",
+    "C": "He is the tyrannical headmaster of Salem House.",
+    "D": "He leaves his money to David and Peggotty."
+    },
+    "answer": [
+    "A",
+    "B",
+    "D"
+    ],
+    "explanation": "Barkis is a carrier who proposes to Peggotty by saying 'Barkis is willin'' and leaves his money to David and his wife. Mr. Creakle is the headmaster of Salem House."
+    },
+    {
+    "id": 40,
+    "type": "mcq",
+    "book": "Little Dorrit",
+    "question": "Which of the following reasons lead Arthur Clennam to suspect a dark family secret?",
+    "options": {
+    "A": "His father's anxious behavior before dying.",
+    "B": "The mysterious message 'Do Not Forget' (D.N.F.) on his father's watch.",
+    "C": "He discovers a hidden will inside the Marshalsea.",
+    "D": "Mr. Merdle confesses the secret to him before dying."
+    },
+    "answer": [
+    "A",
+    "B"
+    ],
+    "explanation": "Arthur suspects a secret due to his father's anxious behavior before dying and the 'Do Not Forget' (D.N.F.) message on the watch. He does not find a will in the Marshalsea, and Merdle does not confess to him."
+    },
   {
   "id": 41,
   "type": "tf",

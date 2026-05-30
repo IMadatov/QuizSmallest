@@ -25,7 +25,7 @@ export class McqComponent implements OnInit {
 
   ngOnInit() {
     const q = this.quiz.currentQuestion() as McqQuestion;
-    this.correctKeys.set([...q.answers]);
+    this.correctKeys.set([...q.answer]);
 
     const saved = this.quiz.getSavedAnswer(q.id);
     if (saved?.type === 'mcq') {
