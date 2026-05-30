@@ -1,5 +1,11 @@
 import { Injectable, inject, signal, computed } from '@angular/core';
-import { Question, Filter, AnswerResult, SelfGrade } from '../models/question.model';
+import {
+  Question,
+  Filter,
+  SelfGrade,
+  StoredAnswer,
+  OptionKey
+} from '../models/question.model';
 import { QUESTIONS } from '../data/questions.data';
 import { QuizStorageService } from './quiz-storage.service';
 
@@ -13,23 +19,27 @@ export class QuizService {
   filter = signal<Filter>({ type: 'all', book: 'all' });
   questions = signal<Question[]>([]);
   currentIndex = signal<number>(0);
-  results = signal<AnswerResult[]>([]);
+  answers = signal<Record<number, StoredAnswer>>({});
 
   currentQuestion = computed(() => this.questions()[this.currentIndex()]);
   progress = computed(() => ({
     current: this.currentIndex() + 1,
     total: this.questions().length
   }));
-  score = computed(() => ({
-    correct: this.results().filter(r => r.correct).length,
-    answered: this.results().length
-  }));
+  score = computed(() => {
+    const values = Object.values(this.answers());
+    return {
+      correct: values.filter(a => a.correct).length,
+      answered: values.length
+    };
+  });
   filteredCount = computed(() => this.getFiltered().length);
   hasSavedProgress = computed(() => {
     this.screen();
     this.questions();
     return this.storage.hasInProgressQuiz();
   });
+  canGoBack = computed(() => this.currentIndex() > 0);
 
   constructor() {
     this.restoreFilter();
@@ -44,24 +54,50 @@ export class QuizService {
     const filtered = this.getFiltered();
     this.questions.set(this.shuffle(filtered));
     this.currentIndex.set(0);
-    this.results.set([]);
+    this.answers.set({});
     this.screen.set('question');
     this.persist();
   }
 
-  submitAnswer(correct: boolean) {
+  saveMcqAnswer(selected: OptionKey[], shuffledOrder: OptionKey[], correct: boolean) {
     const q = this.currentQuestion();
-    this.results.update(r => [...r, {
-      questionId: q.id,
-      type: q.type,
+    this.saveAnswer(q.id, {
+      type: 'mcq',
+      selected,
+      shuffledOrder,
+      confirmed: true,
       correct
-    }]);
-    this.persist();
+    });
   }
 
-  submitSelfGrade(grade: SelfGrade) {
-    const correct = grade === 'good' || grade === 'ok';
-    this.submitAnswer(correct);
+  saveTfAnswer(selected: boolean, correct: boolean) {
+    const q = this.currentQuestion();
+    this.saveAnswer(q.id, { type: 'tf', selected, correct });
+  }
+
+  saveCtAnswer(selfGrade: SelfGrade, correct: boolean) {
+    const q = this.currentQuestion();
+    this.saveAnswer(q.id, { type: 'ct', selfGrade, correct });
+  }
+
+  getSavedAnswer(questionId: number): StoredAnswer | undefined {
+    return this.answers()[questionId];
+  }
+
+  isQuestionAnswered(questionId: number): boolean {
+    return this.answers()[questionId] !== undefined;
+  }
+
+  prevQuestion() {
+    if (this.currentIndex() > 0) {
+      this.currentIndex.update(i => i - 1);
+      this.persist();
+    }
+  }
+
+  endQuiz() {
+    this.screen.set('results');
+    this.persist();
   }
 
   nextQuestion() {
@@ -78,7 +114,7 @@ export class QuizService {
     this.screen.set('home');
     this.questions.set([]);
     this.currentIndex.set(0);
-    this.results.set([]);
+    this.answers.set({});
     this.storage.clear();
   }
 
@@ -102,22 +138,27 @@ export class QuizService {
     this.filter.set(saved.filter);
     this.questions.set(questions);
     this.currentIndex.set(Math.min(saved.currentIndex, questions.length - 1));
-    this.results.set(saved.results);
+    this.answers.set(saved.answers ?? {});
     this.screen.set(saved.screen === 'results' ? 'results' : 'question');
     this.persist();
   }
 
   getBreakdown() {
-    const results = this.results();
+    const values = Object.values(this.answers());
     const types = ['mcq', 'tf', 'ct'] as const;
     return types.map(type => {
-      const filtered = results.filter(r => r.type === type);
+      const filtered = values.filter(r => r.type === type);
       return {
         type,
         correct: filtered.filter(r => r.correct).length,
         total: filtered.length
       };
     });
+  }
+
+  private saveAnswer(questionId: number, data: StoredAnswer) {
+    this.answers.update(a => ({ ...a, [questionId]: data }));
+    this.persist();
   }
 
   private persist() {
@@ -127,7 +168,7 @@ export class QuizService {
       filter: this.filter(),
       questionIds: this.questions().map(q => q.id),
       currentIndex: this.currentIndex(),
-      results: this.results()
+      answers: this.answers()
     });
   }
 

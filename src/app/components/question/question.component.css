@@ -25,3 +25,50 @@
   line-height: 1.5;
   margin-bottom: 16px;
 }
+
+.nav-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn-nav {
+  flex: 1;
+}
+
+.btn-back {
+  background: white;
+  color: #2d6a4f;
+  border: 1.5px solid #2d6a4f;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 52px;
+}
+
+.btn-back:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-end-quiz {
+  width: 100%;
+  background: transparent;
+  color: #888;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  min-height: 48px;
+  margin-top: 8px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btn-end-quiz:hover {
+  color: #c0392b;
+}

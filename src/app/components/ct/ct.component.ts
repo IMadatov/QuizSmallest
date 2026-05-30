@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, computed, inject, signal } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, computed, inject, signal } from '@angular/core';
 import { QuizService } from '../../services/quiz.service';
 import { CtQuestion, SelfGrade } from '../../models/question.model';
 
@@ -8,7 +8,7 @@ import { CtQuestion, SelfGrade } from '../../models/question.model';
   templateUrl: './ct.component.html',
   styleUrl: './ct.component.css'
 })
-export class CtComponent {
+export class CtComponent implements OnInit {
   quiz = inject(QuizService);
   @Output() answerSubmitted = new EventEmitter<void>();
 
@@ -17,14 +17,25 @@ export class CtComponent {
 
   question = computed(() => this.quiz.currentQuestion() as CtQuestion);
 
+  ngOnInit() {
+    const q = this.question();
+    const saved = this.quiz.getSavedAnswer(q.id);
+    if (saved?.type === 'ct') {
+      this.showModel.set(true);
+      this.selectedGrade.set(saved.selfGrade);
+      this.answerSubmitted.emit();
+    }
+  }
+
   toggleModel() {
     this.showModel.set(true);
   }
 
   grade(grade: SelfGrade) {
     if (this.selectedGrade()) return;
+    const correct = grade === 'good' || grade === 'ok';
     this.selectedGrade.set(grade);
-    this.quiz.submitSelfGrade(grade);
+    this.quiz.saveCtAnswer(grade, correct);
     this.answerSubmitted.emit();
   }
 

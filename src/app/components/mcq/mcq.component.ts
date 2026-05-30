@@ -21,15 +21,25 @@ export class McqComponent implements OnInit {
   confirmed = signal(false);
   shuffledOptions = signal<ShuffledOption[]>([]);
   correctKeys = signal<OptionKey[]>([]);
+  private shuffledOrder = signal<OptionKey[]>([]);
 
   ngOnInit() {
     const q = this.quiz.currentQuestion() as McqQuestion;
-    const entries: ShuffledOption[] = (['A', 'B', 'C', 'D'] as OptionKey[]).map(key => ({
-      key,
-      text: q.options[key]
-    }));
-    this.shuffledOptions.set(this.shuffle(entries));
     this.correctKeys.set([...q.answers]);
+
+    const saved = this.quiz.getSavedAnswer(q.id);
+    if (saved?.type === 'mcq') {
+      this.shuffledOrder.set(saved.shuffledOrder);
+      this.shuffledOptions.set(this.buildOptions(q, saved.shuffledOrder));
+      this.selected.set(new Set(saved.selected));
+      this.confirmed.set(true);
+      this.answerSubmitted.emit();
+      return;
+    }
+
+    const order = this.shuffle([...(['A', 'B', 'C', 'D'] as OptionKey[])]);
+    this.shuffledOrder.set(order);
+    this.shuffledOptions.set(this.buildOptions(q, order));
   }
 
   toggleOption(key: OptionKey) {
@@ -47,9 +57,10 @@ export class McqComponent implements OnInit {
 
   confirmAnswer() {
     if (this.confirmed() || this.selected().size === 0) return;
+    const selected = [...this.selected()];
     const correct = this.isAnswerCorrect(this.selected(), this.correctKeys());
     this.confirmed.set(true);
-    this.quiz.submitAnswer(correct);
+    this.quiz.saveMcqAnswer(selected, this.shuffledOrder(), correct);
     this.answerSubmitted.emit();
   }
 
@@ -82,6 +93,10 @@ export class McqComponent implements OnInit {
 
   hasSelection(): boolean {
     return this.selected().size > 0;
+  }
+
+  private buildOptions(q: McqQuestion, order: OptionKey[]): ShuffledOption[] {
+    return order.map(key => ({ key, text: q.options[key] }));
   }
 
   private isAnswerCorrect(selected: Set<OptionKey>, correct: OptionKey[]): boolean {

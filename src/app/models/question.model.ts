@@ -33,11 +33,27 @@ export type Question = McqQuestion | TfQuestion | CtQuestion;
 
 export type SelfGrade = 'good' | 'ok' | 'need-more';
 
-export interface AnswerResult {
-  questionId: number;
-  type: QuestionType;
+export interface McqAnswerData {
+  type: 'mcq';
+  selected: OptionKey[];
+  shuffledOrder: OptionKey[];
+  confirmed: true;
   correct: boolean;
 }
+
+export interface TfAnswerData {
+  type: 'tf';
+  selected: boolean;
+  correct: boolean;
+}
+
+export interface CtAnswerData {
+  type: 'ct';
+  selfGrade: SelfGrade;
+  correct: boolean;
+}
+
+export type StoredAnswer = McqAnswerData | TfAnswerData | CtAnswerData;
 
 export interface Filter {
   type: QuestionType | 'all';

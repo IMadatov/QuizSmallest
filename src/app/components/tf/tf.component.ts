@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, computed, inject, signal } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, computed, inject, signal } from '@angular/core';
 import { QuizService } from '../../services/quiz.service';
 import { TfQuestion } from '../../models/question.model';
 
@@ -8,7 +8,7 @@ import { TfQuestion } from '../../models/question.model';
   templateUrl: './tf.component.html',
   styleUrl: './tf.component.css'
 })
-export class TfComponent {
+export class TfComponent implements OnInit {
   quiz = inject(QuizService);
   @Output() answerSubmitted = new EventEmitter<void>();
 
@@ -16,11 +16,20 @@ export class TfComponent {
 
   question = computed(() => this.quiz.currentQuestion() as TfQuestion);
 
+  ngOnInit() {
+    const q = this.question();
+    const saved = this.quiz.getSavedAnswer(q.id);
+    if (saved?.type === 'tf') {
+      this.selected.set(saved.selected);
+      this.answerSubmitted.emit();
+    }
+  }
+
   select(value: boolean) {
     if (this.selected() !== null) return;
     const correct = value === this.question().answer;
     this.selected.set(value);
-    this.quiz.submitAnswer(correct);
+    this.quiz.saveTfAnswer(value, correct);
     this.answerSubmitted.emit();
   }
 

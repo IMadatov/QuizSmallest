@@ -15,16 +15,24 @@
     </div>
     <p class="question-text">{{ quiz.currentQuestion().question }}</p>
 
-    @switch (quiz.currentQuestion().type) {
-      @case ('mcq') { <app-mcq (answerSubmitted)="onAnswered()" /> }
-      @case ('tf')  { <app-tf  (answerSubmitted)="onAnswered()" /> }
-      @case ('ct')  { <app-ct  (answerSubmitted)="onAnswered()" /> }
+    @for (q of [quiz.currentQuestion()]; track q.id) {
+      @switch (q.type) {
+        @case ('mcq') { <app-mcq /> }
+        @case ('tf')  { <app-tf  /> }
+        @case ('ct')  { <app-ct  /> }
+      }
     }
   </div>
 
-  @if (showNext()) {
-    <button class="btn-primary" (click)="quiz.nextQuestion()">
+  <div class="nav-row">
+    <button class="btn-nav btn-back" [disabled]="!quiz.canGoBack()" (click)="onBack()">
+      ← Back
+    </button>
+
+    <button class="btn-primary btn-nav" (click)="onNext()">
       {{ isLast() ? 'See Results' : 'Next →' }}
     </button>
-  }
+  </div>
+
+  <button class="btn-end-quiz" (click)="onEndQuiz()">End Quiz</button>
 </div>

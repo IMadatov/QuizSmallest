@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { QuizService } from '../../services/quiz.service';
 import { McqComponent } from '../mcq/mcq.component';
 import { TfComponent } from '../tf/tf.component';
@@ -13,9 +13,6 @@ import { CtComponent } from '../ct/ct.component';
 })
 export class QuestionComponent {
   quiz = inject(QuizService);
-  private answeredIndex = signal<number | null>(null);
-
-  showNext = computed(() => this.answeredIndex() === this.quiz.currentIndex());
 
   progressPercent = computed(() => {
     const { current, total } = this.quiz.progress();
@@ -41,7 +38,15 @@ export class QuestionComponent {
     return current >= total;
   });
 
-  onAnswered() {
-    this.answeredIndex.set(this.quiz.currentIndex());
+  onBack() {
+    this.quiz.prevQuestion();
+  }
+
+  onNext() {
+    this.quiz.nextQuestion();
+  }
+
+  onEndQuiz() {
+    this.quiz.endQuiz();
   }
 }

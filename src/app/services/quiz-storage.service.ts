@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AnswerResult, Filter } from '../models/question.model';
+import { Filter, StoredAnswer } from '../models/question.model';
 import { Screen } from './quiz.service';
 
 export interface PersistedQuizState {
@@ -7,7 +7,7 @@ export interface PersistedQuizState {
   filter: Filter;
   questionIds: number[];
   currentIndex: number;
-  results: AnswerResult[];
+  answers: Record<number, StoredAnswer>;
 }
 
 const STORAGE_KEY = 'dickens-quiz-state';
@@ -27,7 +27,11 @@ export class QuizStorageService {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
-      return JSON.parse(raw) as PersistedQuizState;
+      const parsed = JSON.parse(raw) as PersistedQuizState & { results?: unknown[] };
+      if (!parsed.answers) {
+        parsed.answers = {};
+      }
+      return parsed;
     } catch {
       return null;
     }
