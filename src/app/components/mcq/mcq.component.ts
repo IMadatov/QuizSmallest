@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, inject, signal } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, computed, inject, signal } from '@angular/core';
 import { QuizService } from '../../services/quiz.service';
 import { McqQuestion, OptionKey } from '../../models/question.model';
 
@@ -22,6 +22,8 @@ export class McqComponent implements OnInit {
   shuffledOptions = signal<ShuffledOption[]>([]);
   correctKeys = signal<OptionKey[]>([]);
   private shuffledOrder = signal<OptionKey[]>([]);
+
+  question = computed(() => this.quiz.currentQuestion() as McqQuestion);
 
   ngOnInit() {
     const q = this.quiz.currentQuestion() as McqQuestion;

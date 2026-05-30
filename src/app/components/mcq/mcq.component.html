@@ -15,3 +15,7 @@
 @if (hasSelection() && !confirmed()) {
   <button class="btn-confirm" (click)="confirmAnswer()">Confirm Answer</button>
 }
+
+@if (confirmed()) {
+  <div class="explanation">{{ question().explanation }}</div>
+}
