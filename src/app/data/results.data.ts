@@ -30,12 +30,12 @@ export const RESULT_TIERS: ResultTierConfig[] = [
   {
     minPercent: 70,
     message: 'Good work! Review the weak areas.',
-    media: 'gifs/70percent.webm'
+    media: 'gifs/nice.webp'
   },
   {
     minPercent: 60,
     message: 'Nice effort! Keep reviewing.',
-    media: 'gifs/nice.webp'
+    media: 'gifs/70percent.webm'
   },
   {
     minPercent: 0,
