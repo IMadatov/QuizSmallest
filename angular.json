@@ -73,7 +73,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/dickens-quiz/"
+            "baseHref": "/QuizSmallest/"
           }
         },
         "test": {

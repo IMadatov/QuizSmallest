@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng build --base-href /dickens-quiz/ && npx angular-cli-ghpages --dir=dist/dickens-quiz/browser"
+    "build:gh-pages": "ng build --base-href /QuizSmallest/",
+    "deploy": "npm run build:gh-pages && npx angular-cli-ghpages --dir=dist/dickens-quiz/browser"
   },
   "private": true,
   "dependencies": {
