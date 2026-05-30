@@ -4,7 +4,22 @@
   <div class="card score-card">
     <p class="score-main">{{ quiz.score().correct }} / {{ total() }}</p>
     <p class="score-pct">{{ percentage() }}%</p>
-    <p class="score-message">{{ message() }}</p>
+
+    <div class="message-row">
+      @if (isVideo()) {
+        <video
+          class="result-media"
+          [src]="mediaSrc()"
+          autoplay
+          loop
+          muted
+          playsinline
+          aria-hidden="true"></video>
+      } @else {
+        <img class="result-media" [src]="mediaSrc()" [alt]="message()" />
+      }
+      <p class="score-message">{{ message() }}</p>
+    </div>
   </div>
 
   <div class="card">

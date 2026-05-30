@@ -64,3 +64,25 @@ h2 {
   min-height: 52px;
   margin-top: 10px;
 }
+
+.message-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.result-media {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  background: #f0f0eb;
+}
+
+.score-message {
+  flex: 1;
+  margin: 0;
+}

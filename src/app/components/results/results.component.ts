@@ -1,5 +1,6 @@
 import { Component, computed, inject } from '@angular/core';
 import { QuizService } from '../../services/quiz.service';
+import { RESULT_TIERS } from '../../data/results.data';
 
 @Component({
   selector: 'app-results',
@@ -18,13 +19,16 @@ export class ResultsComponent {
     return Math.round((this.quiz.score().correct / total) * 100);
   });
 
-  message = computed(() => {
+  private activeTier = computed(() => {
     const pct = this.percentage();
-    if (pct >= 90) return 'Excellent! You are ready for the exam.';
-    if (pct >= 70) return 'Good work! Review the weak areas.';
-    if (pct >= 50) return 'Keep studying. You can do it!';
-    return 'More practice needed. Try again!';
+    return RESULT_TIERS.find(t => pct >= t.minPercent) ?? RESULT_TIERS[RESULT_TIERS.length - 1];
   });
+
+  message = computed(() => this.activeTier().message);
+
+  mediaSrc = computed(() => this.activeTier().media);
+
+  isVideo = computed(() => this.mediaSrc().endsWith('.webm'));
 
   breakdown = computed(() => this.quiz.getBreakdown());
 
